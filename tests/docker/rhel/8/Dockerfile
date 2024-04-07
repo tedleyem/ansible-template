@@ -2,7 +2,7 @@
 # registry.access.redhat.com/ubi8/ubi@sha256:edc34f89cf9c818c2fb28b8ea1780f384db563ce4293dc0ab8e73ec01791e5af
 FROM registry.access.redhat.com/ubi8/ubi:latest
 RUN yum -y update; yum clean all && \
-    yum -y install openssh-server openssh-clients passwd sudo; yum clean all
+    yum -y install ansible openssh-server openssh-clients passwd sudo; yum clean all
 
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
     rm -f /lib/systemd/system/multi-user.target.wants/*; \

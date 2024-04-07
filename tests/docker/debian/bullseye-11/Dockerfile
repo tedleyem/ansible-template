@@ -3,6 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install packages needed for SSH and interactive OS
 RUN apt-get update && \
     apt-get -y install \
+        ansible \
         openssh-server \
         passwd \
         sudo \

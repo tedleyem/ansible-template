@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 RUN apt-get update; \
-    apt-get -y install openssh-server passwd sudo; \
+    apt-get -y install ansible openssh-server passwd sudo; \
     apt-get -qq clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

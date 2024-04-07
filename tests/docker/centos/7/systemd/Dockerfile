@@ -3,7 +3,7 @@
 FROM centos:centos7
 
 RUN yum -y update; yum clean all && \
-    yum -y install openssh-server openssh-clients passwd sudo; yum clean all
+    yum -y install ansible openssh-server openssh-clients passwd sudo; yum clean all
 
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
     rm -f /lib/systemd/system/multi-user.target.wants/*; \

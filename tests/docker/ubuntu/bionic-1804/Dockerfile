@@ -15,6 +15,7 @@ RUN /bin/bash -e /scripts/ubuntu_apt_config.sh && \
     echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
     /bin/bash -e /security_updates.sh && \
     apt-get install -yqq \
+      ansible \
       curl \
       gpg \
       apt-transport-https \

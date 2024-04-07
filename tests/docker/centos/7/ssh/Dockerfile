@@ -8,7 +8,7 @@
 #   scollier <scollier@redhat.com>
 FROM centos:centos7
 RUN yum -y update; yum clean all
-RUN yum -y install openssh-server openssh-clients passwd sudo; yum clean all
+RUN yum -y install ansible openssh-server openssh-clients passwd sudo; yum clean all
 RUN mkdir /var/run/sshd
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 
