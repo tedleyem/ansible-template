@@ -1,31 +1,31 @@
-Role Name
-=========
+Ansible Template
+================
 
-A brief description of the role goes here.
+This repository is a boilerplate for spinning up new ansible roles and playbooks. 
+Created because of Ansibles ideas on creating an ansible-playbook init
 
 Requirements
 ------------
+* ansible 
+* vagrant
+* docker
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
-Role Variables
---------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+## Command Line Usage
 
-Dependencies
-------------
+To use this provider, add the `--provider` flag to your `vagrant` command:
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```sh
+vagrant up --provider=docker
+```
+## Why Vagrant with Docker?
 
-Example Playbook
-----------------
+ This was inspired by Apple's introduction of the M1 chip which is ARM based. That means that solutions which use Vagrant and VirtualBox will not work on Apple M1 because VirtualBox requires an Intel processors. This lead me to find a solution for a virtual development environment that works with ARM and thus Apple M1 computers. You can find out more information about why I built it here:
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+[Docker](https://www.docker.com) has introduced [Docker Desktop for Apple silicon](https://docs.docker.com/docker-for-mac/apple-silicon/) that runs Docker on Macs that have the Apple M1 chip. By using Docker as a provisioner for Vagrant, we can simulate the same experience as developers using Vagrant with VirtualBox. This is one case where you actually do want a Docker container to behave like a VM.
+
 
 License
 -------
@@ -36,3 +36,10 @@ Author Information
 ------------------
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+
+
+Credits 
+-------
+
+* [mcwarman](https://github.com/mcwarman/vagrant-docker-provider/tree/master) - the guy who inspired the vagrantfiles and docker images
+*

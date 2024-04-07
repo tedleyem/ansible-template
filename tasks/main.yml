@@ -1,2 +1,4 @@
 ---
 # tasks file for template
+- name: 
+  import_tasks: ping.yml

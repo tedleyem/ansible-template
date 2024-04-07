@@ -1,0 +1,16 @@
+# Used by Vagrant
+vagrant:
+  hosts:
+    ubu:
+      http_port: 22
+      ansible_connection: local
+    deb:
+      http_port: 22
+      ansible_connection: local
+    cent:
+      http_port: 22
+      ansible_connection: local
+    rhel:
+      http_port: 22
+      ansible_connection: local
+
